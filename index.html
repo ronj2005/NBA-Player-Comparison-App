@@ -21,7 +21,48 @@
   </head>
   
   <body>
-    <form class="">
+<!-- Navigation Bar Top Section-->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+      <a class="navbar-brand" href="#">NBA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#">About our Team</a>
+          <a class="nav-item nav-link" href="#">Contat Us</a>
+          <a class="nav-item nav-link" href="#">Learn about Sports API</a>
+        </div>
+      </div>
+  </nav>
+<!-- Navigation Bar Bottom Section-->
+  <section class="jumbotron jumbotron-fluid custom-jumbotron">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6 text-right">
+            <h1 id="welcome">
+              Welcome to the Fantasy league!
+            </h1>
+<!-- Navigation Bar Search Buttons-->
+            <form class="">
+              <div class="sb1 grid-container input-group medium-6 cell">
+                <input type="text" placeholder="Search Player" />
+                <button type="button" class="primary button">Search 1</button>
+              </div>
+            </form>
+            <form class="search-form">
+              <div class="sb1 grid-container input-group medium-6 cell">
+                <input type="text" placeholder="Search Player" />
+                <button type="button" class="primary button">Search 2</button>
+              </div>
+            </form>
+          </div>
+  </section>
+
+
+
+    <!-- <form class="">
       <div class="sb1 grid-container input-group medium-6 cell">
         <input type="text" placeholder="Search Player" />
         <button type="button" class="primary button">Search 1</button>
@@ -33,8 +74,10 @@
         <input type="text" placeholder="Search Player" />
         <button type="button" class="primary button">Search 2</button>
       </div>
-    </form>
+    </form> -->
 
+    <!-- Player Card Section -->
+<section class="card-section">
     <div class="card cell small-4">
       <div class="card-section">
         <img src="./assets/images/i.png" />
@@ -54,6 +97,7 @@
         <button type="button" class="success button">Add Player</button>
       </div>
     </div>
+</section>
 
     <form>
       <div class="grid-container">
