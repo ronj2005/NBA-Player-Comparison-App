@@ -4,7 +4,8 @@ var team1ID = $("");
 var team2ID = $("");
 var team1Icon = $("");
 var team2Icon = $("");
-
+var searchBtn1 = $('#search-button1');
+var searchBtn2 = $('#search-button2');
 
 function curTime (){
     var today = moment().format("MMM DD, YYYY");
@@ -12,55 +13,81 @@ function curTime (){
 }
 
 
-function showCurGames () {
+//searches for first player
+searchBtn1.on('click',function(){
 
-    var 
-}
+	
+	var playerSearched = $('#userInput').val();
+	//the following adds an underscore in between first and last name as this is required for the api call
+	playerSearched = playerSearched.replace(/ /g, '_');
 
-//Variables for gathering name of player that user inputed
-var playerSearched1 = 'lebron james'//$('#userInput').val();
-var searchBtn1 = $('#search-button1');
-var searchBtn2 = $('#search-button2');
-var playerSearched2 = 'trae young'//$('#userInput2').val();
 
-/*This replace the space ' ' when user searches for a player with an underscore '_'. 
-This is being done because the api call requires an underscore between the first and last name */
-playerSearched1 = playerSearched1.replace(/ /g, '_');
-playerSearched2 = playerSearched2.replace(/ /g, '_');
-
-/*
-var test = 'lebron james';
-console.log(test);
-test = test.replace(/ /g, '_');
-console.log(test);
-*/
-
-//api call for first player
-fetch("https://nba-player-individual-stats.p.rapidapi.com/players/fullname?name=" + playerSearched1, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "nba-player-individual-stats.p.rapidapi.com",
-		"x-rapidapi-key": "e96cae7e0emsh367bede2289dbf8p17f735jsnd4de50f05e76"
-	}
-})
+	fetch("https://nba-player-individual-stats.p.rapidapi.com/players/fullname?name=" + playerSearched, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "nba-player-individual-stats.p.rapidapi.com",
+			"x-rapidapi-key": "e96cae7e0emsh367bede2289dbf8p17f735jsnd4de50f05e76"
+		}
+	})
 	.then(function(response){
 		return response.json();
 	})
 	.then(function(data){
+		//card info to be displayed 
 		console.log(data);
+		console.log(data.age);
+		console.log(data.firstName + ' ' +data.lastName);
+		console.log(data.position);
+		console.log(data.team);
+		console.log(data.jerseyNumber);
+		console.log(data.headShotUrl);
+		//stats to be displayed
+		console.log(data.careerPercentageFieldGoal);
+		console.log(data.careerPercentageFreethrow);
+		console.log(data.careerPoints);
+		console.log(data.carrerAssists);
+		console.log(data.careerBlocks);
+		console.log(data.careerRebounds);
 
 	})
-//api call for second player
-    fetch("https://nba-player-individual-stats.p.rapidapi.com/players/fullname?name=" + playerSearched2, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "nba-player-individual-stats.p.rapidapi.com",
-		"x-rapidapi-key": "e96cae7e0emsh367bede2289dbf8p17f735jsnd4de50f05e76"
-	}
-})
+}); 
+
+//searches for second player
+searchBtn2.on('click', function(){
+	var playerSearched = $('#userInput2').val();
+	playerSearched = playerSearched.replace(/ /g, '_');
+	fetch("https://nba-player-individual-stats.p.rapidapi.com/players/fullname?name=" + playerSearched, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "nba-player-individual-stats.p.rapidapi.com",
+			"x-rapidapi-key": "e96cae7e0emsh367bede2289dbf8p17f735jsnd4de50f05e76"
+		}
+	})
 	.then(function(response){
 		return response.json();
 	})
 	.then(function(data){
+		//card info to be displayed 
 		console.log(data);
+		console.log(data.age);
+		console.log(data.firstName + ' ' +data.lastName);
+		console.log(data.position);
+		console.log(data.team);
+		console.log(data.jerseyNumber);
+		console.log(data.headShotUrl);
+		//stats to be displayed
+		console.log(data.careerPercentageFieldGoal);
+		console.log(data.careerPercentageFreethrow);
+		console.log(data.careerPoints);
+		console.log(data.carrerAssists);
+		console.log(data.careerBlocks);
+		console.log(data.careerRebounds);
+
 	})
+
+})
+
+
+
+
+
