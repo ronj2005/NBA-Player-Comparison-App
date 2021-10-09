@@ -94,7 +94,13 @@ searchBtn2.on('click', function(){
 		console.log(data.careerBlocks);
 		console.log(data.careerRebounds);
 		//upcoming games to be displayed
-		
+		console.log();
+		var teamEl = data.team;
+		console.log(teamEl);
+		var n = teamEl.lastIndexOf(' ');
+		var result = teamEl.substring(n + 1);
+		console.log(result);
+		getGameInfo(result);
 
 	})
 
@@ -105,9 +111,8 @@ searchBtn2.on('click', function(){
 
 
 function getGameInfo(playerTeam){
-
-
-	fetch('http://data.nba.net/10s/prod/v1/2021/teams/celtics/schedule.json')
+	
+	fetch('http://data.nba.net/10s/prod/v1/2021/teams/' + playerTeam.toLowerCase() +'/schedule.json')
 	.then(function(response){
 		return response.json();
 	})
@@ -118,7 +123,6 @@ function getGameInfo(playerTeam){
 			console.log(data.league.standard[i].hTeam.score);
 			if(data.league.standard[i].hTeam.score === ''){
 				nextGameNum = i;
-				
 				//console.log(nextGameNum);
 				//console.log(i);
 				//console.log(data.league.standard[i].hTeam.score);
@@ -126,16 +130,16 @@ function getGameInfo(playerTeam){
 			}
 		}
 		//upcoming games info to be displayed
+		console.log(data);
 		console.log(data.league.standard[nextGameNum].hTeam.teamId);
 		console.log(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId));
 		console.log(data.league.standard[nextGameNum].vTeam.teamId);
 		console.log(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
 		console.log(data.league.standard[nextGameNum].startTimeEastern);
 		console.log(data.league.standard[nextGameNum].startDateEastern);
-
 	})
-
 }
+
 
 
 
