@@ -68,32 +68,80 @@
 /* Card Section */
 
 .card-section {
+    position: relative;
     display: flex;
-    margin: 10px;
-    align-items: center;
-    padding: 20px;
-    width: 80%;
+    margin: auto;
+    width: 975px;
+    height: 700px;
 }
 
 .card {
+    display: flex;
     margin: 15px;
-    width: 500px;
+    
     align-content: center;
     background-color: rgb(255, 230, 0);
     border: solid white 10px;
-    border-radius: 15%;
+    border-radius: 5%;
 }
 
 .card img {
-    width: 400px;
-    height: 300px;
+  margin: 0 auto;
+  justify-content: center;
+  width: 400px;
+  height: 300px;
 }
 
+.player-name {
+  margin: auto;
+}
+
+.data-section{
+  margin: auto;
+  text-align: center;
+}
 
 .button {
+    display: flex;
+    
     height: 40px;
     width: 150px;
     font-weight: 500;
     border-radius: 15px;
 }
 
+.player-container {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(255, 230, 0);
+  height: 500px;
+  width: 600px;
+  border: solid white 7px;
+  border-radius: 5%;
+}
+
+.live-game-container{
+  margin: 50%;
+
+  background-color: rgb(255, 230, 0);
+  height: 300px;
+  width: 600px;
+  border: solid white 7px;
+  border-radius: 5%;
+}
+
+.save-btn{
+ justify-content:flex-end;
+ text-align: center;
+}
+
+.live {
+  text-align: center;
+  color: white;
+}
+
+label {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}

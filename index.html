@@ -78,106 +78,100 @@
 
     <!-- Player Card Section -->
 <section class="card-section">
-    <div class="card cell small-4">
-      <div class="card-section">
+    <!-- Player Card 1 -->
+    <div class="card">
         <img src="./assets/images/i.png" />
+        <h1 class="player-name"> Player Name</h1>
+      <div class="data-section">
+        <p>Player Data: 1</p>
+        <p>Player Data: 2</p>
+        <p>Player Data: 3</p>
+        <p>Player Data: 4</p>
+        <button type="button" class="primary align-center button">Add Player</button>
       </div>
-      <div class="card-section">
-        <p>This is a simple card with an image inside a `.card-section`.</p>
-        <button type="button" class="success button">Add Player</button>
-      </div>
+          
+    </div>
+    <!-- Player Card 2 -->
+    <div class="card">
+        <img src="./assets/images/6583.png" />
+        <h1 class="player-name"> Player Name</h1>
+        <div class="data-section">
+          <p>Player Data: 1</p>
+          <p>Player Data: 2</p>
+          <p>Player Data: 3</p>
+          <p>Player Data: 4</p>
+          <button type="button" class="primary align-center button">Add Player</button>
+        </div>
     </div>
 
-    <div class="card cell small-4">
-      <div class="card-section">
-        <img src="./assets/images/6583.png" />
-      </div>
-      <div class="card-section">
-        <p>This is a simple card with an image inside a `.card-section`.</p>
-        <button type="button" class="success button">Add Player</button>
-      </div>
-    </div>
 </section>
 
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
+<container class="live-game-container">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-6 cell">
+        <h1 class="live">Live Games</h1>
+        <label> Current Game 1
+          <input type="text" placeholder="Position 1" />
+        </label>
+        <label> Current Game 2
+          <input type="text" placeholder="Position 2" />
+        </label>
+        <label> Current Game 3
+          <input type="text" placeholder="Position 3" />
+        </label>
+        <label> Current Game 4
+          <input type="text" placeholder="Position 4" />
+        </label>
+        <label> Current Game 5
+          <input type="text" placeholder="Position 4" />
+        </label>
       </div>
-    </form>
-
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <div>
-      <button type="button" class="save-btn primary button">Save Roster</button>
     </div>
+  </div>
+</container>
+
+    <container class="player-container">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            <label> Point Guard
+              <input type="text" placeholder="Position 1" />
+            </label>
+            <label> Shooting Guard
+              <input type="text" placeholder="Position 2" />
+            </label>
+            <label> Small Forward
+              <input type="text" placeholder="Position 3" />
+            </label>
+            <label> Power Forward
+              <input type="text" placeholder="Position 4" />
+          </div>
+          <div class="medium-6 cell">
+          </label>
+          <label> Center
+            <input type="text" placeholder="Position 5" />
+          </label>
+          <label> Bench 1
+            <input type="text" placeholder="Position 6" />
+          </label>
+          <label> Bench 2
+            <input type="text" placeholder="Position 7"/>
+          </label>
+          <label> Bench 3
+            <input type="text" placeholder="Position 8"/>
+          </label>
+          </div>
+          <div>
+            <br>
+            <button type="button" class="save-btn primary button">Save Roster</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </container>
+
+ 
 
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
