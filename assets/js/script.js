@@ -12,6 +12,17 @@ function curTime (){
     console.log(today);
 }
 
+//save team id as key name and team tri code as value
+fetch('https://data.nba.net/10s/prod/v2/2021/teams.json')
+.then(function(response){
+	return response.json();
+})
+.then(function(data){
+	console.log(data);
+	for(i = 0; i < 34; i++){
+		localStorage.setItem(data.league.standard[i].teamId, data.league.standard[i].tricode);
+	}
+})
 
 //searches for first player
 searchBtn1.on('click',function(){
@@ -82,11 +93,49 @@ searchBtn2.on('click', function(){
 		console.log(data.carrerAssists);
 		console.log(data.careerBlocks);
 		console.log(data.careerRebounds);
+		//upcoming games to be displayed
+		
 
 	})
 
 })
 
+
+
+
+
+function getGameInfo(playerTeam){
+
+
+	fetch('http://data.nba.net/10s/prod/v1/2021/teams/celtics/schedule.json')
+	.then(function(response){
+		return response.json();
+	})
+	.then(function(data){
+		var nextGameNum;
+		console.log(data);
+		for(i = 0; i < 9; i++){
+			console.log(data.league.standard[i].hTeam.score);
+			if(data.league.standard[i].hTeam.score === ''){
+				nextGameNum = i;
+				
+				//console.log(nextGameNum);
+				//console.log(i);
+				//console.log(data.league.standard[i].hTeam.score);
+				break;
+			}
+		}
+		//upcoming games info to be displayed
+		console.log(data.league.standard[nextGameNum].hTeam.teamId);
+		console.log(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId));
+		console.log(data.league.standard[nextGameNum].vTeam.teamId);
+		console.log(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
+		console.log(data.league.standard[nextGameNum].startTimeEastern);
+		console.log(data.league.standard[nextGameNum].startDateEastern);
+
+	})
+
+}
 
 
 
