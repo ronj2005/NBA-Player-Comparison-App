@@ -11,6 +11,39 @@ body {
   background-image: url(/assets/images/20383536.jpeg);
 }
 
+.logo{
+  max-width: 15%;
+  height: auto;
+}
+li,a,button{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: aqua;
+  text-decoration: none;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  padding:  30px 10%;
+}
+.nav_links{
+    list-style: none;
+    
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover {
+    color: royalblue;
+}
+
+
+
 /* Nav Section */
 ::selection {
   color: var(--brown);
@@ -68,6 +101,7 @@ body {
 /* Card Section */
 
 .card-section {
+
   position: relative;
   display: flex;
   margin: auto;
@@ -151,4 +185,11 @@ font-size: 25px;
 
 #gameDay1{
   width:100%;
+
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 975px;
+    height: 700px;
 }
+
