@@ -47,7 +47,7 @@
 <!-- Navigation Bar Search Buttons-->
             <form class="">
               <div class="sb1 grid-container input-group medium-6 cell">
-                <input type="text" placeholder="Search Player" id="userInput" />
+                <input type="text" placeholder="Search Player" id="userInput"/>
                 <button type="button" class="primary button" id="search-button1">Search 1</button>
               </div>
             </form>
@@ -62,184 +62,116 @@
 
 
 
-    <!-- <form class="">
-      <div class="sb1 grid-container input-group medium-6 cell">
-        <input type="text" placeholder="Search Player" />
-        <button type="button" class="primary button">Search 1</button>
-      </div>
-    </form>
-
-    <form class="search-form">
-      <div class="sb1 grid-container input-group medium-6 cell">
-        <input type="text" placeholder="Search Player" />
-        <button type="button" class="primary button">Search 2</button>
-      </div>
-    </form> -->
-
     <!-- Player Card Section -->
 <section class="card-section">
-    <div class="card cell small-4">
-      <div class="card-section">
-        <img src="./assets/images/i.png" />
+    <!-- Player Card 1 -->
+    <div class="card" id="card1">
+        <img src="./assets/images/i.png" id='player-image'/>
+        
+      <div class="data-section" id="stats-container">
+       <!--add player stats here via JS-->
+        
       </div>
-      <div class="card-section">
-        <p>This is a simple card with an image inside a `.card-section`.</p>
-        <button type="button" class="success button">Add Player</button>
-      </div>
+          
+    </div>
+    <!-- Player Card 2 -->
+    <div class="card" id="card2">
+        <img src="./assets/images/6583.png" id='player-image2'/>
+        
+        <div class="data-section" id="stats-container2">
+          
+          
+        </div>
     </div>
 
-    <div class="card cell small-4">
-      <div class="card-section">
-        <img src="./assets/images/6583.png" />
-      </div>
-      <div class="card-section">
-        <p>This is a simple card with an image inside a `.card-section`.</p>
-        <button type="button" class="success button">Add Player</button>
-      </div>
-    </div>
 </section>
 
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
-      </div>
-    </form>
 
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
+<div class="card">
+  <h1 id="gameDay1">Time AND Date</h1>
+  <div class="card-section">
+      <h2 id="hTeam1">ATL</h2>
+  </div>
+  <div class="card-section">
+    <h2 id="vTeam1">MIA</h2>
+  </div>
+</div>
+<!--<container class="live-game-container">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-6 cell">
+        <h1 class="live">Live Games</h1>
+        <label> Current Game 1
+          <input type="text" placeholder="Position 1" />
+        </label>
+        <label> Current Game 2
+          <input type="text" placeholder="Position 2" />
+        </label>
+        <label> Current Game 3
+          <input type="text" placeholder="Position 3" />
+        </label>
+        <label> Current Game 4
+          <input type="text" placeholder="Position 4" />
+        </label>
+        <label> Current Game 5
+          <input type="text" placeholder="Position 4" />
+        </label>
       </div>
-    </form>
-
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label
-              >Input Label
-              <input type="text" placeholder=".medium-6.cell" />
-            </label>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <div>
-      <button type="button" class="save-btn primary button">Save Roster</button>
     </div>
+  </div>
+</container> -->
 
-   <!--<script
-      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>--> 
+    <container class="player-container">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            <label> Point Guard
+              <input type="text" placeholder="Position 1" />
+            </label>
+            <label> Shooting Guard
+              <input type="text" placeholder="Position 2" />
+            </label>
+            <label> Small Forward
+              <input type="text" placeholder="Position 3" />
+            </label>
+            <label> Power Forward
+              <input type="text" placeholder="Position 4" />
+          </div>
+          <div class="medium-6 cell">
+          </label>
+          <label> Center
+            <input type="text" placeholder="Position 5" />
+          </label>
+          <label> Bench 1
+            <input type="text" placeholder="Position 6" />
+          </label>
+          <label> Bench 2
+            <input type="text" placeholder="Position 7"/>
+          </label>
+          <label> Bench 3
+            <input type="text" placeholder="Position 8"/>
+          </label>
+          </div>
+          <div>
+            <br>
+            <button type="button" class="save-btn primary button">Save Roster</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </container>
+
+ 
+
+
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="/assets/js/script.js"></script>
   </body>
 </html>
 
-<!-- <form class="form-inline">
-        <div class="form-group mx-sm-3 mb-2">
-          <label for="inputPassword2" class="sr-only">Search</label>
-          <input type="password" class="form-control" id="inputPassword2" placeholder="Player Name">
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Search</button>
-    </form>
 
 
 
-
-    <br>
-    <br>
-
-      <div class="card d-inline-flex p-2" style="width: 18rem;">
-        <img class="card-img-top" src="./assets/images/6583.png" alt="Player Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Player 1 Name placeholder</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button href="#" class="btn btn-primary">Select Player</button>
-        </div>
-      </div>
-
-
-      <div class="card d-inline-flex p-2" style="width: 18rem;">
-        <img class="card-img-top" src="./assets/images/i.png" alt="Player Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Player 2 Name placeholder</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button href="#" class="btn btn-primary">Select Player</button>
-        </div>
-      </div>
-
-      <ul class="list-group d-inline-flex p-2">
-        <li class="list-group-item active">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-      </ul>
-
-      <ul class="list-group d-inline-flex p-2">
-        <li class="list-group-item active">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-        <li class="list-group-item">placeholder</li>
-      </ul> -->
