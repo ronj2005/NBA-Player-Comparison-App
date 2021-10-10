@@ -1,9 +1,4 @@
-var team1Name = $("");
-var team2Name = $("");
-var team1ID = $("");
-var team2ID = $("");
-var team1Icon = $("");
-var team2Icon = $("");
+
 var searchBtn1 = $('#search-button1');
 var searchBtn2 = $('#search-button2');
 
@@ -134,6 +129,7 @@ searchBtn1.on('click',function(){
 
 //searches for second player
 searchBtn2.on('click', function(){
+    statsCont2.html('');
 	var playerSearched = $('#userInput2').val();
 	playerSearched = playerSearched.replace(/ /g, '_');
 	fetch("https://nba-player-individual-stats.p.rapidapi.com/players/fullname?name=" + playerSearched, {
@@ -349,26 +345,7 @@ function getGameInfo2(playerTeam){
 
 
 
-/*addBtn.on('click', function(event){
-	event.preventDefault();
-	var element = event.target;
-	console.log(element);
-	var position = element.getAttribute('id');
-	console.log(position);
-})*/
 
-
-
-
-
-
-//var today = moment('20211013');
-//$('#gameDay1').text(today.format("MMM Do, YYYY"));
-
-//var responseDate = moment(formatDate).format('MM/DD/YYYY');
-
-//var test = moment().format('mmm');
-//console.log(test);
 
 
 
