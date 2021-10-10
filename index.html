@@ -22,7 +22,7 @@
   
   <body>
 <!-- Navigation Bar Top Section-->
-  <nav class="navbar navbar-expand-lg custom-navbar">
+  <!-- <nav class="navbar navbar-expand-lg custom-navbar">
       <a class="navbar-brand" href="#">NBA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -31,11 +31,23 @@
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="#">About our Team</a>
-          <a class="nav-item nav-link" href="#">Contat Us</a>
+          <a class="nav-item nav-link" href="#">Contact Us</a>
           <a class="nav-item nav-link" href="#">Learn about Sports API</a>
         </div>
       </div>
-  </nav>
+  </nav> -->
+
+  <header>
+    <img class="logo" src="./assets/images/nba-logo.png" alt="logo">
+    <nav>
+      <ul class="nav_links">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">contact us</a></li>
+        <li><a href="#">last one</a></li>
+      </ul>
+    </nav>
+  </header>  
+
 <!-- Navigation Bar Bottom Section-->
   <section class="jumbotron jumbotron-fluid custom-jumbotron">
       <div class="container">
@@ -65,8 +77,10 @@
     <!-- Player Card Section -->
 <section class="card-section">
     <!-- Player Card 1 -->
+
     <div class="card" id="card1">
         <img src="./assets/images/i.png" id='player-image'/>
+
 
         <div>
           <h1 id="player-number1"></h1>
@@ -76,16 +90,20 @@
         </div>
       <div class="data-section" id="stats-container"></div>
       <div id="game-container1"></div>
+
           
     </div>
     <!-- Player Card 2 -->
+
     <div class="card" id="card2">
         <img src="./assets/images/6583.png" id='player-image2'/>
+
         <div>
           <h1 id="player-number2"></h1>
           <p id="pos2"></p>
           <p id="height2"></p>
           <p id="team2"></p>
+
         </div>
         <div class="data-section" id="stats-container2"></div>
         <div id="game-container2"></div>
@@ -93,7 +111,9 @@
 
 </section>
 
+
 <!--Up coming games card
+
 <div class="card">
   <h1 id="gameDay1">Time AND Date</h1>
   <div class="card-section">
@@ -115,6 +135,7 @@
   </div>
 </div>
 <!--<container class="live-game-container">
+
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-6 cell">
@@ -137,8 +158,10 @@
       </div>
     </div>
   </div>
+
 </container> -->
 <!--
+
     <container class="player-container">
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
@@ -180,6 +203,7 @@
     </container>
   -->
 
+
   <!--Player Map-->
     <div id="player-map-container">
       <div class="player-card">
@@ -214,6 +238,7 @@
       </div>
       
     </div>
+
  
 
 
