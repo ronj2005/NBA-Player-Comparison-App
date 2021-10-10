@@ -12,8 +12,12 @@ var card2 = $('#card2');
 
 var statsCont1 = $('#stats-container');
 var statsCont2 = $('#stats-container2');
+var gameCont1 = $('#game-container1');
+var gameCont2 = $('#game-container2');
+
 var img1 = $('#player-image');
 var img2 = $('#player-image2');
+
 
 function curTime (){
     var today = moment().format("MMM DD, YYYY");
@@ -31,6 +35,7 @@ fetch('https://data.nba.net/10s/prod/v2/2021/teams.json')
 		localStorage.setItem(data.league.standard[i].teamId, data.league.standard[i].tricode);
 	}
 })
+
 
 //searches for first player
 searchBtn1.on('click',function(){
@@ -72,6 +77,10 @@ searchBtn1.on('click',function(){
 		console.log(data.careerRebounds);
 			//************* */
 			img1.attr('src', data.headShotUrl);
+			$('#pos1').text(data.position);
+			$('#height1').text(data.height);
+			$('#player-number1').text(data.jerseyNumber);
+			$('#team1').text(data.team);
 			var h1El = $('<h1>');
 			h1El.text(data.firstName + ' ' +data.lastName);
 			statsCont1.append(h1El);
@@ -82,7 +91,7 @@ searchBtn1.on('click',function(){
 					statsCont1.append(pEl);
 				}
 			var btnEl = $('<button>');
-			btnEl.addClass('primary align-center button').attr('type' , 'button').text('Add ' + data.position);
+			btnEl.addClass('primary button').addClass('addBtn').attr('id', data.position).text('Add ' + data.position);
 			statsCont1.append(btnEl);
 			/******************** */
 		//taking teamURL from team name to make it usable in up coming games API 
@@ -93,8 +102,35 @@ searchBtn1.on('click',function(){
 		console.log(result);
 		getGameInfo(result);
 
+		$('#card1').on('click', function(event){
+			event.preventDefault();
+			var element = event.target;
+			var position;
+			console.log(element);
+			if(element.matches('button') === true){
+				position = element.getAttribute('id');
+				console.log(position);
+				console.log(data.headShotUrl);
+				if(position === 'Small Forward'){
+					$('#small-forward').attr('src', data.headShotUrl);
+					$('#sf-text').text('SF: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if (position === 'Point Guard'){
+					$('#point-guard').attr('src', data.headShotUrl);
+					$('#pg-text').text('PG: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if(position === 'Center'){
+					$('#center').attr('src', data.headShotUrl);
+					$('#c-text').text('C: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if(position === 'Shooting Guard'){
+					$('#shooting-guard').attr('src', data.headShotUrl);
+					$('#sg-text').text('SG: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if(position === 'Power Forward'){
+					$('#power-forward').attr('src', data.headShotUrl);
+					$('#pf-text').text('PF: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				}
+			}
+		})
 	})
-}); 
+});
 
 //searches for second player
 searchBtn2.on('click', function(){
@@ -138,6 +174,10 @@ searchBtn2.on('click', function(){
 		console.log(data.careerRebounds);
 			//************* */
 			img2.attr('src', data.headShotUrl);
+			$('#player-number2').text(data.jerseyNumber);
+			$('#pos2').text(data.position);
+			$('#height2').text(data.height);
+			$('#team2').text(data.team);
 			var h1El = $('<h1>');
 			h1El.text(data.firstName + ' ' +data.lastName);
 			statsCont2.append(h1El);
@@ -147,7 +187,7 @@ searchBtn2.on('click', function(){
 				statsCont2.append(pEl);
 				}
 				var btnEl = $('<button>');
-				btnEl.addClass('primary align-center button').attr('type' , 'button').text('Add ' + data.position);
+				btnEl.addClass('primary button').addClass('addBtn').attr('id', data.position).text('Add ' + data.position);
 				statsCont2.append(btnEl);
 		//upcoming games to be displayed
 		console.log();
@@ -158,13 +198,42 @@ searchBtn2.on('click', function(){
 		console.log(result);
 		getGameInfo2(result);
 
+		$('#card2').on('click', function(event){
+			event.preventDefault();
+			var element = event.target;
+			var position;
+			console.log(element);
+			if(element.matches('button') === true){
+				position = element.getAttribute('id');
+				console.log(position);
+				console.log(data.headShotUrl);
+				if(position === 'Small Forward'){
+					$('#small-forward').attr('src', data.headShotUrl);
+					$('#sf-text').text('SF: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if (position === 'Point Guard'){
+					$('#point-guard').attr('src', data.headShotUrl);
+					$('#pg-text').text('PG: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if(position === 'Center'){
+					$('#center').attr('src', data.headShotUrl);
+					$('#c-text').text('C: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if(position === 'Shooting Guard'){
+					$('#shooting-guard').attr('src', data.headShotUrl);
+					$('#sg-text').text('SG: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				} else if(position === 'Power Forward'){
+					$('#power-forward').attr('src', data.headShotUrl);
+					$('#pf-text').text('PF: ' + data.firstName.toUpperCase() + ' ' + data.lastName.toUpperCase());
+				}
+			}
+		})
+
 	})
 
 })
 
+
 //gets upcoming game for first player
 function getGameInfo(playerTeam){
-
+	gameCont1.html('');
 	fetch('http://data.nba.net/10s/prod/v1/2021/teams/' + playerTeam.toLowerCase() +'/schedule.json')
 	.then(function(response){
 		return response.json();
@@ -194,10 +263,30 @@ function getGameInfo(playerTeam){
 			/******************** */
 			//displaying card info
 			var displayDate = moment(data.league.standard[nextGameNum].startDateEastern);
-			$('#gameDay1').text(displayDate.format("MMM Do, YYYY") + ' ' 
+			/*$('#gameDay1').text(displayDate.format("MMM Do, YYYY") + ' ' 
 			+ data.league.standard[nextGameNum].startTimeEastern);
 			$('#hTeam1').text(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId));
-			$('#vTeam1').text(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
+			$('#vTeam1').text(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));*/
+			
+			//var gameContainer = $('<div>');
+			
+			var h3El = $('<h3>');
+			var h2El =$('<h5>');
+			var h4Home = $('<h4>');
+			var h4Vis = $('<h4>');
+			gameCont1.addClass('game-container');
+			//$('game-container').html('');
+			h3El.text('Upcoming Game');
+			h2El.text(displayDate.format("MMM Do, YYYY") + ' ' 
+			+ data.league.standard[nextGameNum].startTimeEastern);
+			h4Home.text(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId));
+			h4Vis.text(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
+
+			//card1.append(gameContainer);
+			gameCont1.append(h3El);
+			gameCont1.append(h2El);
+			gameCont1.append(h4Home);
+			gameCont1.append(h4Vis);
 
 
 			/*************************** */
@@ -206,7 +295,7 @@ function getGameInfo(playerTeam){
 
 //gets upcoming game for second player
 function getGameInfo2(playerTeam){
-	
+	gameCont2.html('');
 	fetch('http://data.nba.net/10s/prod/v1/2021/teams/' + playerTeam.toLowerCase() +'/schedule.json')
 	.then(function(response){
 		return response.json();
@@ -218,9 +307,7 @@ function getGameInfo2(playerTeam){
 			console.log(data.league.standard[i].hTeam.score);
 			if(data.league.standard[i].hTeam.score === ''){
 				nextGameNum = i;
-				//console.log(nextGameNum);
-				//console.log(i);
-				//console.log(data.league.standard[i].hTeam.score);
+
 				break;
 			}
 		}
@@ -232,8 +319,46 @@ function getGameInfo2(playerTeam){
 		console.log(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
 		console.log(data.league.standard[nextGameNum].startTimeEastern);
 		console.log(data.league.standard[nextGameNum].startDateEastern);
+			/******************** */
+			//displaying card info
+			var displayDate = moment(data.league.standard[nextGameNum].startDateEastern);
+		
+			
+			var h3El = $('<h3>');
+			var h2El =$('<h5>');
+			var h4Home = $('<h4>');
+			var h4Vis = $('<h4>');
+			gameCont2.addClass('game-container');
+			//$('game-container').html('');
+			h3El.text('Upcoming Game');
+			h2El.text(displayDate.format("MMM Do, YYYY") + ' ' 
+			+ data.league.standard[nextGameNum].startTimeEastern);
+			h4Home.text(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId));
+			h4Vis.text(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
+
+			//card1.append(gameContainer);
+			gameCont2.append(h3El);
+			gameCont2.append(h2El);
+			gameCont2.append(h4Home);
+			gameCont2.append(h4Vis);
+
+			/*************************** */
 	})
 }
+
+
+
+
+/*addBtn.on('click', function(event){
+	event.preventDefault();
+	var element = event.target;
+	console.log(element);
+	var position = element.getAttribute('id');
+	console.log(position);
+})*/
+
+
+
 
 
 
