@@ -134,6 +134,7 @@ searchBtn1.on('click',function(){
 
 //searches for second player
 searchBtn2.on('click', function(){
+	statsCont2.html('');
 	var playerSearched = $('#userInput2').val();
 	playerSearched = playerSearched.replace(/ /g, '_');
 	fetch("https://nba-player-individual-stats.p.rapidapi.com/players/fullname?name=" + playerSearched, {
