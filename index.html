@@ -80,29 +80,39 @@
 
     <div class="card" id="card1">
         <img src="./assets/images/i.png" id='player-image'/>
-        
-      <div class="data-section" id="stats-container">
-       <!--add player stats here via JS-->
-        
 
-      </div>
+
+        <div>
+          <h1 id="player-number1"></h1>
+          <p id="pos1"></p>
+          <p id="height1"></p>
+          <p id="team1"></p>
+        </div>
+      <div class="data-section" id="stats-container"></div>
+      <div id="game-container1"></div>
+
           
     </div>
     <!-- Player Card 2 -->
 
     <div class="card" id="card2">
         <img src="./assets/images/6583.png" id='player-image2'/>
-        
-        <div class="data-section" id="stats-container2">
-          
-          
+
+        <div>
+          <h1 id="player-number2"></h1>
+          <p id="pos2"></p>
+          <p id="height2"></p>
+          <p id="team2"></p>
 
         </div>
+        <div class="data-section" id="stats-container2"></div>
+        <div id="game-container2"></div>
     </div>
 
 </section>
 
 
+<!--Up coming games card
 
 <div class="card">
   <h1 id="gameDay1">Time AND Date</h1>
@@ -111,6 +121,17 @@
   </div>
   <div class="card-section">
     <h2 id="vTeam1">MIA</h2>
+  </div>
+</div>
+-->
+<!---->
+<div class="card">
+  <h1 id="gameDay2">Time AND Date</h1>
+  <div class="card-section">
+      <h2 id="hTeam2">ATL</h2>
+  </div>
+  <div class="card-section">
+    <h2 id="vTeam2">MIA</h2>
   </div>
 </div>
 <!--<container class="live-game-container">
@@ -138,6 +159,8 @@
     </div>
   </div>
 
+</container> -->
+<!--
 
     <container class="player-container">
       <div class="grid-container">
@@ -178,32 +201,43 @@
         </div>
       </div>
     </container>
+  -->
 
 
- 
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
-</html>
-
-<!-- <form class="form-inline">
-        <div class="form-group mx-sm-3 mb-2">
-          <label for="inputPassword2" class="sr-only">Search</label>
-          <input type="password" class="form-control" id="inputPassword2" placeholder="Player Name">
+  <!--Player Map-->
+    <div id="player-map-container">
+      <div class="player-card">
+        <img src="/assets/images/unlocked-player.jpeg" id="point-guard">
+        <div class="player-text">
+          <p id='pg-text'>PG:</p>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Search</button>
-    </form>
-
+      </div>
+      <div class="player-card">
+        <img src="/assets/images/unlocked-player.jpeg" id="shooting-guard">
+        <div class="player-text">
+          <p id="sg-text">SG:</p>
+        </div>
+      </div>
+      <div class="player-card">
+        <img src="/assets/images/unlocked-player.jpeg" id="power-forward">
+        <div class="player-text">
+          <p id='pf-text'>PF:</p>
+        </div>
+      </div>
+      <div class="player-card">
+        <img src="/assets/images/unlocked-player.jpeg" id="small-forward">
+        <div class="player-text">
+          <p id="sf-text">SF:</p>
+        </div>
+      </div>
+      <div class="player-card">
+        <img src="/assets/images/unlocked-player.jpeg" id='center'>
+        <div class="player-text">
+          <p id="c-text">C:</p>
+        </div>
+      </div>
+      
+    </div>
 
  
 

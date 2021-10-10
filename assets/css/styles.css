@@ -120,6 +120,7 @@ header{
   border: solid white 10px;
   border-radius: 5%;
   height: fit-content;
+  width:50%;
 }
 
 .card img {
@@ -186,10 +187,42 @@ font-size: 25px;
 #gameDay1{
   width:100%;
 
-    position: relative;
-    display: flex;
-    margin: auto;
-    width: 975px;
-    height: 700px;
+}
+#gameDay2{
+  width:100%;
+}
+
+#player-map-container{
+  width:50%;
+  height: fit-content;
+  background-color:red;
+}
+
+.player-card{
+  height: fit-content;
+  width: fit-content;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.player-card img{
+  height: 100px;
+  width: 130px;
+}
+
+#card1{
+  height: 700px;
+  width:650px;
+}
+
+#card2{
+  height: 700px;
+  width:650px;
+}
+
+.game-container{
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
