@@ -22,7 +22,7 @@
   
   <body>
 <!-- Navigation Bar Top Section-->
-  <nav class="navbar navbar-expand-lg custom-navbar">
+  <!-- <nav class="navbar navbar-expand-lg custom-navbar">
       <a class="navbar-brand" href="#">NBA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -31,11 +31,23 @@
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="#">About our Team</a>
-          <a class="nav-item nav-link" href="#">Contat Us</a>
+          <a class="nav-item nav-link" href="#">Contact Us</a>
           <a class="nav-item nav-link" href="#">Learn about Sports API</a>
         </div>
       </div>
-  </nav>
+  </nav> -->
+
+  <header>
+    <img class="logo" src="./assets/images/nba-logo.png" alt="logo">
+    <nav>
+      <ul class="nav_links">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">contact us</a></li>
+        <li><a href="#">last one</a></li>
+      </ul>
+    </nav>
+  </header>  
+
 <!-- Navigation Bar Bottom Section-->
   <section class="jumbotron jumbotron-fluid custom-jumbotron">
       <div class="container">
@@ -65,8 +77,10 @@
     <!-- Player Card Section -->
 <section class="card-section">
     <!-- Player Card 1 -->
+
     <div class="card" id="card1">
         <img src="./assets/images/i.png" id='player-image'/>
+
 
         <div>
           <h1 id="player-number1"></h1>
@@ -76,16 +90,20 @@
         </div>
       <div class="data-section" id="stats-container"></div>
       <div id="game-container1"></div>
+
           
     </div>
     <!-- Player Card 2 -->
+
     <div class="card" id="card2">
         <img src="./assets/images/6583.png" id='player-image2'/>
+
         <div>
           <h1 id="player-number2"></h1>
           <p id="pos2"></p>
           <p id="height2"></p>
           <p id="team2"></p>
+
         </div>
         <div class="data-section" id="stats-container2"></div>
         <div id="game-container2"></div>
@@ -93,7 +111,104 @@
 
 </section>
 
+<<<<<<< HEAD
 
+=======
+
+<!--Up coming games card
+
+<div class="card">
+  <h1 id="gameDay1">Time AND Date</h1>
+  <div class="card-section">
+      <h2 id="hTeam1">ATL</h2>
+  </div>
+  <div class="card-section">
+    <h2 id="vTeam1">MIA</h2>
+  </div>
+</div>
+-->
+<!---->
+<div class="card">
+  <h1 id="gameDay2">Time AND Date</h1>
+  <div class="card-section">
+      <h2 id="hTeam2">ATL</h2>
+  </div>
+  <div class="card-section">
+    <h2 id="vTeam2">MIA</h2>
+  </div>
+</div>
+<!--<container class="live-game-container">
+
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-6 cell">
+        <h1 class="live">Live Games</h1>
+        <label> Current Game 1
+          <input type="text" placeholder="Position 1" />
+        </label>
+        <label> Current Game 2
+          <input type="text" placeholder="Position 2" />
+        </label>
+        <label> Current Game 3
+          <input type="text" placeholder="Position 3" />
+        </label>
+        <label> Current Game 4
+          <input type="text" placeholder="Position 4" />
+        </label>
+        <label> Current Game 5
+          <input type="text" placeholder="Position 4" />
+        </label>
+      </div>
+    </div>
+  </div>
+
+</container> -->
+<!--
+
+    <container class="player-container">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            <label> Point Guard
+              <input type="text" placeholder="Position 1" />
+            </label>
+            <label> Shooting Guard
+              <input type="text" placeholder="Position 2" />
+            </label>
+            <label> Small Forward
+              <input type="text" placeholder="Position 3" />
+            </label>
+            <label> Power Forward
+              <input type="text" placeholder="Position 4" />
+          </div>
+          <div class="medium-6 cell">
+          </label>
+          <label> Center
+            <input type="text" placeholder="Position 5" />
+          </label>
+          <label> Bench 1
+            <input type="text" placeholder="Position 6" />
+          </label>
+          <label> Bench 2
+            <input type="text" placeholder="Position 7"/>
+          </label>
+          <label> Bench 3
+            <input type="text" placeholder="Position 8"/>
+          </label>
+          </div>
+          <div>
+            <br>
+            <button type="button" class="save-btn primary button">Save Roster</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </container>
+  -->
+
+
+  <!--Player Map-->
+>>>>>>> 5120d51326e536ccdc46a5b477d6f6acfd036226
     <div id="player-map-container">
       <div class="player-card">
         <img src="assets/images/unlocked-player.jpeg" id="point-guard">
@@ -127,6 +242,7 @@
       </div>
       
     </div>
+
  
 
 
