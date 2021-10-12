@@ -31,6 +31,13 @@ fetch('https://data.nba.net/10s/prod/v2/2021/teams.json')
 	}
 })
 
+fetch('http://data.nba.net/10s/prod/v1/2021/players.json')
+.then(function(response){
+	return response.json();
+})
+.then(function(data){
+	console.log(data);
+})
 
 //searches for first player
 searchBtn1.on('click',function(){
@@ -129,6 +136,8 @@ searchBtn1.on('click',function(){
 
 //searches for second player
 searchBtn2.on('click', function(){
+    console.log('test');
+
     statsCont2.html('');
 	var playerSearched = $('#userInput2').val();
 	playerSearched = playerSearched.replace(/ /g, '_');
@@ -225,7 +234,6 @@ searchBtn2.on('click', function(){
 	})
 
 })
-
 
 //gets upcoming game for first player
 function getGameInfo(playerTeam){
@@ -341,6 +349,22 @@ function getGameInfo2(playerTeam){
 			/*************************** */
 	})
 }
+
+$('#save-roster-button').on('click', function(){
+    console.log('');
+    var rosterObj = {
+        pg: $('#pg-text').text(),
+        pgImg:$('#point-guard').attr('src'),
+        sg: $('#sg-text').text(),
+        sgImg:$('#shooting-guard').attr('src'),
+        pf: $('#pf-text').text(),
+        pfImg:$('#power-forward').attr('src'),
+        sf: $('#sf-text').text(),
+        sfImg:$('#small-forward').attr('src'),
+        c:  $('#c-text').text(),
+        cImg: $('#center').attr('src'),
+    };
+})
 
 
 

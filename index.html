@@ -17,57 +17,53 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>NBA APP | HOME </title>
+    <title>Document</title>
   </head>
-  
   <body>
-
-
+<!-- Geader abd Navigation Bar Section-->
   <header>
-    <img class="logo" src="./assets/images/nba-logo.png" alt="logo">
+    <img class="logo" src="./assets/images/icon2.png" alt="logo">
     <nav>
       <ul class="nav_links">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">contact us</a></li>
-        <li><a href="#">last one</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">NBA API Links</a></li>
       </ul>
     </nav>
-  </header>  
-
-<!-- Navigation Bar Bottom Section-->
+  </header>
+<!-- Title and description-->
   <section class="jumbotron jumbotron-fluid custom-jumbotron">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12 col-md-6 text-right">
             <h1 id="welcome">
-              Welcome to the Fantasy league!
+              All-Star Team Draft
             </h1>
-<!-- Navigation Bar Search Buttons-->
-            <form class="">
-              <div class="sb1 grid-container input-group medium-6 cell">
-                <input type="text" placeholder="Search Player" id="userInput"/>
-                <button type="button" class="primary button" id="search-button1">Search 1</button>
-              </div>
-            </form>
-            <form class="search-form">
-              <div class="sb1 grid-container input-group medium-6 cell">
-                <input type="text" placeholder="Search Player" id="userInput2" />
-                <button type="button" class="primary button" id="search-button2">Search 2</button>
-              </div>
-            </form>
+            <br>
+          <div class="app-summary">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, debitis optio? Quam, libero?
+              Incidunt excepturi, commodi veniam dicta magnam iusto dolorem fugiat
+              inventore dolor reprehenderit doloribus, illum nemo asperiores vero.
+            </p>
           </div>
+          </div>
+        </div>
+      </div>
   </section>
-
-
-
     <!-- Player Card Section -->
 <section class="card-section">
     <!-- Player Card 1 -->
-
+<div>
+  <!-- Search Button 1-->
+  <form class="search-form">
+    <div id="search1" class="sb1 grid-container input-group medium-6 cell">
+          <input placeholder="search Player 1" id="userInput"/>
+          <button type="button" class="primary button" id="search-button1">Search 1</button>
+    </div>
+  </form>
     <div class="card" id="card1">
-        <img src="./assets/images/i.png" id='player-image'/>
-
-
+        <img src="./assets/images/profile-icon.png" id='player-image'/>
         <div>
           <h1 id="player-number1"></h1>
           <p id="pos1"></p>
@@ -76,74 +72,161 @@
         </div>
       <div class="data-section" id="stats-container"></div>
       <div id="game-container1"></div>
-
-          
     </div>
+  </div>
+</div>
     <!-- Player Card 2 -->
-
-    <div class="card" id="card2">
-        <img src="./assets/images/6583.png" id='player-image2'/>
-
-        <div>
+<div>
+<!-- Search Button 2-->
+  <form class="search-form">
+    <div id="search2" class="sb1 grid-container input-group medium-6 cell">
+      <input placeholder="Search Player 2" id="userInput2"/>
+      <button type='button' class="primary button" id="search-button2">Search 2</button>
+    </div>
+  </form>
+  <div class="card" id="card2">
+    <img src="./assets/images/profile-icon.png" id='player-image2'/>
+      <div class="data-set1">
           <h1 id="player-number2"></h1>
           <p id="pos2"></p>
           <p id="height2"></p>
           <p id="team2"></p>
-
-        </div>
-        <div class="data-section" id="stats-container2"></div>
-        <div id="game-container2"></div>
+      </div>
+      <div class="data-section" id="stats-container2"></div>
+      <div id="game-container2"></div>
     </div>
-
+</div>
 </section>
-
-
-
-
-
+<div class="player-map-title">
+  <h1>User Team</h1>
+</div>
   <!--Player Map-->
-    <div id="player-map-container">
-      <div class="player-card">
-        <img src="/assets/images/unlocked-player.jpeg" id="point-guard">
-        <div class="player-text">
-          <p id='pg-text'>PG:</p>
-        </div>
+  <div id="player-map-container">
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id="point-guard">
+      <div class="player-text">
+        <p id='pg-text'>PG:</p>
       </div>
-      <div class="player-card">
-        <img src="/assets/images/unlocked-player.jpeg" id="shooting-guard">
-        <div class="player-text">
-          <p id="sg-text">SG:</p>
-        </div>
-      </div>
-      <div class="player-card">
-        <img src="/assets/images/unlocked-player.jpeg" id="power-forward">
-        <div class="player-text">
-          <p id='pf-text'>PF:</p>
-        </div>
-      </div>
-      <div class="player-card">
-        <img src="/assets/images/unlocked-player.jpeg" id="small-forward">
-        <div class="player-text">
-          <p id="sf-text">SF:</p>
-        </div>
-      </div>
-      <div class="player-card">
-        <img src="/assets/images/unlocked-player.jpeg" id='center'>
-        <div class="player-text">
-          <p id="c-text">C:</p>
-        </div>
-      </div>
-      
     </div>
-
- 
-
-
-
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id="shooting-guard">
+      <div class="player-text">
+        <p id="sg-text">SG:</p>
+      </div>
+    </div>
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id="power-forward">
+      <div class="player-text">
+        <p id='pf-text'>PF:</p>
+      </div>
+    </div>
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id="small-forward">
+      <div class="player-text">
+        <p id="sf-text">SF:</p>
+      </div>
+    </div>
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id='center'>
+      <div class="player-text">
+        <p id="c-text">C:</p>
+      </div>
+    </div>
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id='center'>
+      <div class="player-text">
+        <p id="c-text">B1:</p>
+      </div>
+    </div>
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id='center'>
+      <div class="player-text">
+        <p id="c-text">B2:</p>
+      </div>
+    </div>
+    <div class="player-card">
+      <img src="./assets/images/profile-icon.png" id='center'>
+      <div class="player-text">
+        <p id="c-text">B3:</p>
+      </div>
+    </div>
+    <div id="save1" class="svb1 grid-container input-group medium-6 cell">
+      <button type="button" class="save-button primary">Save Roster</button>
+</div>
+  </div>
+<br>
+<br>
+<div class="player-map-title">
+  <h1>Alt Team</h1>
+</div>
+<!--Player Map-->
+<div id="player-map-container">
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id="point-guard">
+    <div class="player-text">
+      <p id='pg-text'>PG:</p>
+    </div>
+  </div>
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id="shooting-guard">
+    <div class="player-text">
+      <p id="sg-text">SG:</p>
+    </div>
+  </div>
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id="power-forward">
+    <div class="player-text">
+      <p id='pf-text'>PF:</p>
+    </div>
+  </div>
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id="small-forward">
+    <div class="player-text">
+      <p id="sf-text">SF:</p>
+    </div>
+  </div>
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id='center'>
+    <div class="player-text">
+      <p id="c-text">C:</p>
+    </div>
+  </div>
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id='center'>
+    <div class="player-text">
+      <p id="c-text">B1:</p>
+    </div>
+  </div>
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id='center'>
+    <div class="player-text">
+      <p id="c-text">B2:</p>
+    </div>
+  </div>
+  <div class="player-card">
+    <img src="./assets/images/profile-icon.png" id='center'>
+    <div class="player-text">
+      <p id="c-text">B3:</p>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+  <div>
+    <div class="grid-x expanded callout secondary">
+      <div class="small-6 large-3 cell">
+        <p class="lead">Contact</p>
+        <ul class="menu vertical">
+          <li><a href="#"><i class="fa-brands fa-twitter dark"></i> Twitter</a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook primary"></i> Facebook</a></li>
+          <li><a href="https://github.com/ronj2005/NBA-Player-Comparison-App"><i class="fa-brands fa-github primary"></i> Github </a></li>
+        </ul>
+      </div>
+  </footer>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
 
