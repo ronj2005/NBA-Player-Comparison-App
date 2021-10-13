@@ -7,10 +7,10 @@
 body {
   background-color: rgb(87, 83, 83);
   background-position: top;
-  background-image: url(/assets/images/court.jpeg);
+  background-image: url('/assets/images/court.jpeg');
 }
 .jumbotron {
-  background-image: url(/assets/images/BBGS.jpeg);
+  background-image: url('/assets/images/BBGS.jpeg');
   /* background-color: var(--dgrey); */
 }
 .logo{
