@@ -241,7 +241,7 @@ searchBtn2.on('click', function(){
 //gets upcoming game for first player
 function getGameInfo(playerTeam){
 	gameCont1.html('');
-	fetch('http://data.nba.net/10s/prod/v1/2021/teams/' + playerTeam.toLowerCase() +'/schedule.json')
+	fetch('https://data.nba.net/10s/prod/v1/2021/teams/' + playerTeam.toLowerCase() +'/schedule.json')
 	.then(function(response){
 		return response.json();
 	})
@@ -303,7 +303,7 @@ function getGameInfo(playerTeam){
 //gets upcoming game for second player
 function getGameInfo2(playerTeam){
 	gameCont2.html('');
-	fetch('http://data.nba.net/10s/prod/v1/2021/teams/' + playerTeam.toLowerCase() +'/schedule.json')
+	fetch('https://data.nba.net/10s/prod/v1/2021/teams/' + playerTeam.toLowerCase() +'/schedule.json')
 	.then(function(response){
 		return response.json();
 	})
