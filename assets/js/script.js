@@ -12,6 +12,15 @@ var gameCont2 = $('#game-container2');
 
 var img1 = $('#player-image');
 var img2 = $('#player-image2');
+var teamArr = [];
+
+if(JSON.parse(localStorage.getItem('savedTeams')) === null){
+	teamArr = [];
+}else {
+	teamArr = JSON.parse(localStorage.getItem('savedTeams'));
+}
+console.log(teamArr);
+
 
 
 function curTime (){
@@ -31,13 +40,7 @@ fetch('https://data.nba.net/10s/prod/v2/2021/teams.json')
 	}
 })
 
-fetch('http://data.nba.net/10s/prod/v1/2021/players.json')
-.then(function(response){
-	return response.json();
-})
-.then(function(data){
-	console.log(data);
-})
+
 
 //searches for first player
 searchBtn1.on('click',function(){
@@ -283,7 +286,7 @@ function getGameInfo(playerTeam){
 			h3El.text('Upcoming Game');
 			h2El.text(displayDate.format("MMM Do, YYYY") + ' ' 
 			+ data.league.standard[nextGameNum].startTimeEastern);
-			h4Home.text(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId));
+			h4Home.text(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId) + " @ " ).append('\xa0');
 			h4Vis.text(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
 
 			//card1.append(gameContainer);
@@ -337,7 +340,7 @@ function getGameInfo2(playerTeam){
 			h3El.text('Upcoming Game');
 			h2El.text(displayDate.format("MMM Do, YYYY") + ' ' 
 			+ data.league.standard[nextGameNum].startTimeEastern);
-			h4Home.text(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId));
+			h4Home.text(localStorage.getItem(data.league.standard[nextGameNum].hTeam.teamId) + " @ " ).append('\xa0');
 			h4Vis.text(localStorage.getItem(data.league.standard[nextGameNum].vTeam.teamId));
 
 			//card1.append(gameContainer);
@@ -351,24 +354,116 @@ function getGameInfo2(playerTeam){
 }
 
 $('#save-roster-button').on('click', function(){
-    console.log('');
+    console.log('sdfasdf');
     var rosterObj = {
         pg: $('#pg-text').text(),
+		sg: $('#sg-text').text(),
+		pf: $('#pf-text').text(),
+		sf: $('#sf-text').text(),
+		c:  $('#c-text').text(),
         pgImg:$('#point-guard').attr('src'),
-        sg: $('#sg-text').text(),
         sgImg:$('#shooting-guard').attr('src'),
-        pf: $('#pf-text').text(),
         pfImg:$('#power-forward').attr('src'),
-        sf: $('#sf-text').text(),
         sfImg:$('#small-forward').attr('src'),
-        c:  $('#c-text').text(),
         cImg: $('#center').attr('src'),
     };
+    console.log(rosterObj.pg);
+    localStorage.setItem($('#user-roster-input').val(),JSON.stringify(rosterObj));
+
+	
+	teamArr.push($('#user-roster-input').val());
+	console.log(teamArr);
+	localStorage.setItem('savedTeams', JSON.stringify(teamArr));
+	generateDiv($('#user-roster-input').val());
+	
+	
+
 })
 
 
+function generateDiv(savedTeamName){
+	var obj = JSON.parse(localStorage.getItem(savedTeamName));
+	console.log(obj);
+	console.log(obj.pg);
+
+	var teamRoster = Object.values(obj);
+	console.log(teamRoster);
+	console.log(teamRoster[1]);
+	//var imgIdArr = ['pg1', 'sg1', 'pf1', 'sf1', 'c1'];
+	//var pIdArr = ['pgT1', 'sgT1', 'pfT1', 'sfT1', 'cT1'];	
+
+	var divContainer = $('<div>');
+	divContainer.attr('id', 'player-map-container');
+	divContainer.insertAfter('#player-map-container');
+	var h3El = $('<h3>');
+	h3El.attr('style', 'width:100%').text(savedTeamName);
+	divContainer.append(h3El);
+	for(i = 0; i < 5; i++){
+		var divPlayerCard = $('<div>');
+		divPlayerCard.addClass('player-card');
+		divContainer.append(divPlayerCard);
+			
+			var imgEl = $('<img>');
+			var divText = $('<div>');
+			imgEl.attr('src', teamRoster[i + 5]);
+			
+			divPlayerCard.append(imgEl);
+			divPlayerCard.append(divText);
+				
+				var pEl = $('<p>');
+				pEl.text(teamRoster[i])
+				divText.append(pEl);
+}
+}
+
+function displaySavedTeams(){
+	
+	var recallArr = JSON.parse(localStorage.getItem('savedTeams'));
+	
+	if(recallArr === null){
+		return;
+	}else{
+	for(j = 0; j < recallArr.length; j++){
+		console.log(j);
+		generateDiv(recallArr[j]);
+		console.log(j);
+	}}
+	
+}
+
+displaySavedTeams();
+
+var emailSubmit = document.querySelector("#btnInsert");
+var userEmail = document.querySelector("#user-email");
+emailSubmit.addEventListener('click', function() {
+    var email = userEmail.value;
+    console.log(email);
+    if (email) {
+        localStorage.setItem('email', email);
+    }
+    // console.log(localStorage.getItem('email'));
+});
+
+var startDraft = document.querySelector(".start-button");
+startDraft.addEventListener("click", draftTimer);
 
 
+function draftTimer() {
+    var timer = 60 * 5, minutes, seconds;
+    console.log("Is clicked")
+    var buzz = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        document.querySelector('#time').textContent = minutes + ":" + seconds;
+        if(--timer === 0){
+			clearInterval(buzz);
+			$('#time').text("00:00");
+		}
+    }, 1000);
+
+}
 
 
 
